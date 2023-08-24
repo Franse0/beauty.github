@@ -1,0 +1,542 @@
+/* Asi saco los valores por defecto de los margenes, los paddings y le pido  que tenga la propiedad border box  */
+/* Esto es una buena practica antes de empezar a estilar. Se usa la etiqueta  "*" para que se aplique a todo. Es una especie de reseteo de la ventana */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+/* Colores */
+/* Variables con colores */
+:root{
+    --negro:#000000;
+    --dark-brown:#412D17;
+    --brown:#C28736;
+    --yellow:#F4b52b;
+    --beige:#F2c562;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* Body */
+/* Estilo por etiqueta */
+body{
+    background-color: var(--beige);
+    font-family: sans-serif;
+}
+
+/* Y esto es un boton, cuando hicimos el mockup vimos que ibamos a repetir un boton miuchas veces entonces asi lo creamos. Cuando yo haga un button en html y le ponga esta propiedad a su class va a recibir estos estilos. ASi evitamos repetir la escitura de codigo y tener que darle forma a caada uno de los botones */
+.btn-beauty{
+    padding: .5rem 2rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: var(--yellow);
+    border: none;
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 1, .6);
+    cursor: pointer;
+}
+
+
+
+/* Para tener en cuenta si imagiamos todo como cajas
+    Border: es el borde de la caja, la linea que delimita la caja
+    Padding es el espagio que tengo desde el borde de la caja a mi contenido de adentro 
+    Margin es el espacio que tengo entre el borde de la caja y lo que esta afuera
+
+
+    ademas
+
+    Width es ancho
+    heigh es alto
+    backround-color es el color de fondo de la caja
+    color es el color del contenido de la caja
+
+    Vamos a ver estilado por etiquetas que tienen el nombre de la etiqueta como header o  h1 y tambien por clase que son las que tiene un pubnto al principio
+    ".section1"
+
+*/
+
+/* Comenzamos */
+
+
+/* Al igual que en ahtml aprecen las cosas por orden tambein es bueno dar estilo por orden por eso todo va a estar en orden */
+
+
+/* Header y nav */
+/* por etiquqeta */
+header{
+    height: 60px;
+    display: flex;/*Etiqueta de posisionamiento Flex */
+    background-color: var(--brown);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem 0 1rem;
+}
+
+/* Estilado por clase */
+.header-img{
+    width: 100px;
+    position: relative;
+    bottom:  0px;
+}
+
+/* Estilado por etiquetas anidadas, una dentro de la otra */
+nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position:absolute;
+    right:15%;
+    top: 5%;
+}
+
+/* Estilado por etiquetas anidadas, una dentro de la otra */
+nav ul li a{
+    color: var(--dark-brown);
+    font-weight: bold;
+}
+
+/* Hover es cuadno el mouse esta encima del elemento */
+nav ul li a:hover{
+    border-bottom:2px dashed var(--dark-brown);
+   
+}
+
+/* menu hamburguesa que no se ve */
+.m_burguer{
+    visibility: hidden;
+}
+
+/* Este es el unico pedasito de codigo responsivo que vamos a tener y lo que va a hacer es desaparecer el nav y va a aparece el menu hamburgeusa a los 760 px */
+@media (max-width:760px){
+    /* Esto quiere decir que cuando la visual de la pagina alcance los valores de 760 px se van a aplicar estos cambios.*/
+    nav{
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100vh;
+    background: linear-gradient( var(--yellow),var(--beige));
+    text-align: center;
+    visibility: hidden;
+    border-bottom: 1px solid var(--dark-brown);
+    }
+
+    nav ul{
+
+        flex-direction: column;
+        /* border: 1px solid red; */
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        right:auto;
+        top: 0;
+
+    }
+
+    .m_burguer{
+        position: absolute;
+        top:22%;
+        right:  20%;
+        font-weight: bold;
+        font-size: 2rem;
+        color: var(--dark-brown);
+        cursor: pointer;
+        visibility: visible;
+    }
+
+    .open-nav{
+        visibility: visible;
+    }
+
+}
+
+
+/* seciton 1 */
+/* Esta secion va a estar estilizada toda con clases */
+.section1 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+
+/* Widh para el ancho, display lo que hace es acomodar las posiciones de las cajas diferentes, y compertir los elementos de en linea a en bloque, para desde ahi pore estilarlis mejor.
+
+Sus propiedades son :
+    flex-direccion: hace referencia a la direccion de las cajas, "column" es columna y "row" horizontal
+    gap, es la separacion entre los elementos
+    aling-intems esta es la ubicacion vertical
+    justify-content esta la ubicacion horizontal*/
+.pequeña-descripcion{
+    width: 100%;
+    /* Por defecto las cosas se acomodan en posicion de colunma, aplicacndo display flex ahora los objetos se ubican en vertical */
+    display: flex;
+}
+
+.descripcion-contenedor{
+    /* Flex para posicionar vertical */
+    display: flex;
+
+    /* gap para indicar la separacion entre los elementos */
+    gap: 20px;
+
+    /* Column para decirle que en vez de vertical quiero que sea en columna */
+    flex-direction: column;
+
+    /* Para ubicar hroziontalmente al centro */
+    align-items: center;
+
+    /* para ubicar verticalmente al centro */
+    justify-content: center;
+
+    /* textro al centro */
+    text-align: center;
+
+    /* ancho */
+    width: 60%;
+}
+/* ejemplo de anidacion y clase */
+.img img{
+    width: 400px;
+}
+
+.nubes{
+    width: 100%;
+    border: 1px solid var(--negro);
+    height: 60px;
+}
+
+.nubes-links  {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.nubes-links li a{
+    color: var(--dark-brown);
+
+}
+
+/* Hover es cuando el mouse pase por arriba */
+.nubes-links li a:hover{
+    border-bottom: 1px solid var(--dark-brown);
+}
+
+
+
+
+/* seciton 2 prodcuts */
+/* Lo primero que hice gue resolver el tema de las imagenes que antes resolviamos desde html , hecho esto puedo ver mejor todo para darle forma */
+.img-producto{
+    width: 200px;
+}
+
+/* Aca van todos los porductos, importante los buenos nombres que hagan buenas referencias para facilitar el trabajo */
+.productos{
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Nuestra tarjeta de producto */
+.tarjeta-producto{
+    max-width: 250px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, .5);
+}
+
+/* precio de la tarjeta de producto, tambien habriamos llegado al mismo resultado haciendo ".tarjeta-prodcuto span{}" */
+.precio{
+    font-weight: bold;
+    margin: .5rem;
+}
+
+
+.producto-contenedor{
+    width: 70%;
+}
+
+/* Buscador de productos, siempre se usan los mismos atributos, ancho, borde, display, background */
+.buscador-producto-contenedor{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    background-color: #C28736;
+    border-radius: 30px;
+    gap: 10px;
+}
+
+.input{
+    background-color: #F2c562;
+    border: none;
+    padding: .2rem;
+    border-radius: 5px;
+}
+
+/* Aunque ya lo venimos usando arriba,podemos dar estilos a los elemntos por ubicacion
+    "top" quiere decir arriba
+    "bottom" abajo,
+    "right" quiere decir izquierda
+    "left" quiere decir derecha,
+
+    entonces si yo uso "border-top" lo que hago es solo darle estilo a borde de arriba, su uso "margin-left" solo le doy margin a la derecha
+*/
+
+
+/* formulario */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+    background-color: #C28736;
+    border-radius: 20px;
+    margin-top: 70px;
+    max-height: 1300px;
+    height: 80%;
+}
+
+/* Input dentro de elemento con la clase "form" */
+.form input{
+    width: 150px;
+    margin-left: 10px;
+
+}
+
+.section2{
+    display: flex;
+    margin-top: 30px; 
+}
+
+
+
+
+/* Seccion numero 3, seecion de contacto */
+.section3{
+    background-color: var(--dark-brown);
+    padding: 6rem;
+}
+
+.message form{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+
+.section3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+
+}
+
+.section3 h3{
+    color: var(--brown);
+    font-size: 2rem;
+}
+
+.section3 p{
+    color: var(--yellow);
+}
+
+.redes-sociales{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 30px;
+}
+
+.redes-sociales i{
+    font-size: 5rem;
+}
+
+.message h4{
+    color: var(--yellow);
+
+}
+
+
+
+.redes-sociales i:nth-child(1){
+    color:#3b5998;
+}
+.redes-sociales i:nth-child(2){
+    color: #E4405f;
+}
+.redes-sociales i:nth-child(3){
+    color: #00acee;
+}
+.redes-sociales i:nth-child(4){
+    color: white;
+}
+.redes-sociales i:nth-child(5){
+    color: var(--yellow);
+}
+
+
+/* Aprovechamos que el footer tenia pocas etiquetas para solo estilizarlo con etiquetas y etiquetas anidadas */
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 2rem;
+    align-items: center;
+    background-color: var(--brown);
+    
+}
+
+footer div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer div p{
+    border-bottom: dashed var(--dark-brown);
+}
+
+footer span{
+    color: rgb(180, 3, 3);
+}
+
+
+
+
+
+
+
+
+/* Darle estilo a una pagina requeire mucha repeticion, siempre vamos a usar las mismas etiquetas, siempre los mismos atributos, la repeticion va a hacer que nos acordemos. Tambien hace falta romper la pagina, jugar, ponerse creativo y divertirse */
+
+
+
+/* icono del carrito */
+.cart-icon {
+    border: 1px solid var(--bg-electric);
+    padding: 12px 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-white);
+    cursor: pointer;
+    margin: 0;
+    border: 1px solid;
+  }
+  
+
+  /* carrito */
+.carrito {
+    position: absolute;
+    top: 61px;
+    right: 0;
+    padding: 50px 30px;
+    background: linear-gradient(to top, var(--dark-brown), var(--beige));
+    border-left: 1px solid var(--dark-brown);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100vh - 50px);
+    z-index: 2;
+    min-width: 375px;
+    transform: translate(200%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+  }
+
+  /* clase para abrir y cerrar el carrito */
+  .abrir-carrito{
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.99, 0.35, 0.99);
+  }
+
+  /* transicion para el icono del carrito */
+  .cart-icon {
+    transition: all 0.2s ease-out;
+  }
+  
+  /* hover para el icono del carrito */
+  .cart-icon:hover {
+    color: var(--beige);
+    border-color: var(--beige);
+    transition: all 0.2s ease-in;
+  }
+
+
+
+  @media (max-width:760px){
+    .pequeña-descripcion{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .descripcion-contenedor{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .section2{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .form{
+        width: 100%;
+        padding: 1rem 3rem;
+        align-items: center;
+    }
+
+    .productos{
+        justify-content: center;
+    }
+
+    aside{
+        width: 100%;
+    }
+
+
+    footer div{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    footer div p{
+        flex-direction: column;
+        gap: 50px;
+        text-decoration: none;
+        border: none;
+    }
+
+
+  }

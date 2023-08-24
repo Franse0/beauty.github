@@ -1,0 +1,239 @@
+   <!-- Vamos a ralizar  nuestra primera pagina web!! Es una excelente practica comentarla para luego nosotros recordar lo que hicimos y para que otra persona cuando vea nuestro codigo pueda entenderlo con mas facilidad -->
+
+
+
+<!-- Tipo de dato, (html) -->
+<!DOCTYPE html>
+
+<!-- declaramos el lenguaje español -->
+<html lang="es"  >
+
+<!-- Cabeza de la pagina, aca van los datos que no se ven pero si importan -->
+<head>
+    <!-- Aca declaramos el conjunto de caracteres que vamos a usar que siempre va a ser este por que contiene todos los caracteres del idioma humano -->
+    <meta charset="UTF-8">
+
+    <!-- Escala del viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link a hoja de estilos css -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Link a cloudflare para poder usar los iconos de fontawemsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- Titulo de la pagina -->
+    <title>Beauty Makeup</title>
+</head>
+
+
+<!-- Ahora compieza el "body", aca va a ir todo lo que se ve de la pagina web -->
+<body>
+
+
+    <!-- La primera etiqueta dentro del body va a ser el "header". Esta es la seccion de arriba en todas las paginas webs -->
+    <header>
+
+        <!--Mi contenido del heder lo dividi en dos cajitas, la primera es el contenedor del logo y la segunda es mi barra de navegacion  -->
+
+        <!-- cajita 1 -->
+        <div>
+            <!-- Esta imagen va a ser estilizada gracias al atributo class que tiene el valor  "header-img"-->
+            <img src="./assets/logos/1-logo-negro.png" alt="" class="header-img">
+        </div>
+
+        <!-- Esto es un icono de un menu hamburguesa que gracias a css no se va a ver hasta que la resolucion de la pagina sea del tamaño de un celular -->
+        <i class="fa-solid fa-bars m_burguer" id="m_burguer"></i>
+
+        <!-- cajita 2 -->
+        <nav id="nav" class="">
+            <!-- Para estilar el nav vamos a hacerlo con el nombre de las etiquetas, para darle estilo al nav abria que copiar esto en css "nav ul{}"
+            Esto quiere decir que le voy a dar estilos a las listas "ul" que esten dentro de las etiquetas "nav" por eso no se van a ver afectadas todas las listas  -->
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="cart-label">
+            <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        </div>
+
+        <div class="carrito " id="carrito">
+            <h2>cantidad de cosas</h2>
+            <span id="cantidad"></span>
+            <h3>precio total:</h3>
+            <span id="total-carrito"></span>
+            <button class="btn-beauty comprar">comprar</button>
+            <button class="btn-beauty vaciar">vaciar</button>
+        </div>
+    </header>
+
+    <!-- Seguimos con la segunda etiqueta que nos encontramos en todas las paginas wbes. La etiqueta main va a tener todo o casi todo el contenido de la pagina. Es en realidad el contenedor de los contenedor del contenido de las paginas. En ella vamos a encontrar etiquetas de "section", de "article", de "aside" y dentro de estas etiquetas mencionadas va a estar el contenido de la pagina -->
+    <main>
+
+        <!-- Esta es la primera seccion de la pagina , tambien se podria haber llamado seccion "nosotros" o algo que haga referencia a la misma-->
+        <section class="section1" id="inicio">
+            
+                <!-- Para dar esltilo a las cosas podemos optar por dar clases a los elementos como en "section1", de esta manera vamos a llamar a la clase desde css y vamos a estar haciendo referencia al elemento al cual asignamos la clase. -->
+            <h1>Nosotros</h1>
+            <!-- Aca vemos como contenedores contienen otros contenedores, esto es muy usado par dar estilos por que mejora la manipulacion. -->
+            <div>
+                <div class="pequeña-descripcion">
+                        <div class="img">
+                            <img src="./assets/logos/1-logo-negro.png" alt="">
+                        </div>
+                    <div class="descripcion-contenedor">
+                        <h3>Beauty Makeup</h3>
+                        <p class="text-descripcion">
+                            Somo Beauty Makeup. Somos tu compañera en el viaje, somos confianza, empoderamiento, elegacia, libertad. Somo mas que una Marca. Somos autodescubrimientoll.Únete a nosotrax mientras exploramos el emocionante mundo del maquillaje juntxs. Tu historia es nuestra historia, y esperamos ser parte de tus mejores momentos.
+                        </p>
+                        <!-- La etiqueta p tiene una clase para ser manipulada -->
+                    </div>
+                </div>
+
+                <!-- Aca vemos de nuevo etiquetas de listas que como no estan dentro del nav se ven afectadas de otra forma -->
+                <div class="nubes">
+                    <ul class="nubes-links">
+                        <li><a href="#">Belleza</a></li>
+                        <li><a href="#">Nutrición facial</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">OnFire</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Secion prodcutos -->
+        <section class="section2">
+            <div class="producto-contenedor">
+                <div class="buscador-producto-contenedor">
+
+                    <!-- Dentro de las etiquetas tenemos atributos como "placeholder", que quiere decir que es lo que se ve en el input hata que se haga focus dentro de el. Tambien vemos el atributo "Type" que es muy comun e indica el tipo de etiqueta -->
+                    <input type="search"  class="input" placeholder="Que estas buscando?">
+                    <button type="submit" class="btn-beauty">Buscar</button>
+                </div>
+                <!-- Aca abajo van a ir todos los productos. Es importante tratar siempre que las clases tengan nombres relacionados a sus entornos o funciones dentro de la pagina, eso hace que para nosotros sea mas facil buscar a que se hace referencia. Podriamos poner cualquier nombre aca como "cocodrilo", pero para una peersona que no sabe lo que hicimos  no seria facil encontrar la relacion entre el html y la hoja de estilo en cascada. Probablemente si nosotros revisaramos nuestro codigo dentro de unos meses tampoco nos acrodariamos -->
+                <div class="productos" id="productos">
+
+                    <!-- Nuestra tarejata de productos se compone de un contenedor que la contiene (valga la reduncancia), pero este contenedor es importante porque le da forma. Tenemos un titulo, una imagen del producto, una descripcion, el precio y un boton para agregar al carrio que todavia no hace nada.-->
+                    <div class="tarjeta-producto">
+                        <h3> Mascarilla</h3>
+                        <!-- Para acceder a la imagen usamos el "./" este nos ubicaria donde estamos parados con el documento, entramos despues del "/" a la carpeta "assets", "./assets/" y luego solo seleccionamos la imagen -->
+                        <img src="./assets/descarga.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 3 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty agregar" >Agregar al carrito</button>
+                    </div>
+
+                    <div class="tarjeta-producto">
+                        <h3 > Rimel</h3>
+                        <img src="./assets/descarga2.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 6 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty agregar">Agregar al carrito</button>
+                    </div>
+
+                    <div class="tarjeta-producto">
+                        <h3 > Pintalabios</h3>
+                        <img src="./assets/descarga3.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 4 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty agregar">Agregar al carrito</button>
+                    </div>
+
+                    <div class="tarjeta-producto">
+                        <h3 > Acido hialuronico</h3>
+                        <img src="./assets/descarga4.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 2 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty agregar">Agregar al carrito</button>
+                    </div>
+
+                    <div class="tarjeta-producto">
+                        <h3 > Kit</h3>
+                        <img src="./assets/descarga5.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 2 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty agregar">Agregar al carrito</button>
+                    </div>
+
+                    <div class="tarjeta-producto">
+                        <h3 > Kit</h3>
+                        <img src="./assets/descarga6.jpg" alt="" class="img-producto">
+                        <p >Este prodcuto promete rejuvenecerte 2 años con una sola aplicacion</p>
+                        <span class="precio">$1339</span>
+                        <button type="submit" class="btn-beauty">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Aca tenemos un aside, dentro de el vamos a tener un formulario para pedir turnos -->
+            <aside>
+
+                <!-- Este es nuestro formulario, este va a recibir los datos del nombre, apellido, telefono, hora y fecha y los va a agendar mediante el metodo post en la base de datos de la pagina (en teoria, esto todavia no es asi)  -->
+                <form method="post" class="form">
+                    <h3>Turnos</h3>
+                    <!-- Los Label son encabezados de los input -->
+                    <label >Nombre<input class="input" type="text" ></label>
+                    <label >Apellido<input type="text" class="input" ></label>
+                    <label >Telefono<input type="text" class="input" ></label>
+                    <label >Hora<input type="time"  class="input" ></label>
+                    <label >Fecha<input type="date" class="input" ></label>
+                    <button type="submit" class="btn-beauty">Hacer petición del turno</button>
+                </form>
+            </aside>
+        </section>
+
+
+        <!-- Esta es nuestra seccion 3, una secion muy importante ya que es la de contacto, es el canal que teneos con los usuarios -->
+        <section class="section3" id="contacto">
+            <!-- Un titulo h3 con un llamado a la accion -->
+            <h3>Contactate con nosotrxs .</h3>
+
+            <!-- Un texto bien atractivo -->
+            <!-- Esto es todo parte de una pagina hay que ser creativo -->
+            <p>Pedí turno, consulta, acesorate... Estamos para servirte</p>
+
+            <!-- Acá tenemos nuestras redes sociales. En el caso de las redes usamos iconos de una pagina llamada "fontawesome", url: "fontawesome.com/icons/bars?s=solid&f=classic", pero fue necesario para que estos iconos  se vean hacer en el "Head" una referencia mediante la etiqueta link al url que permite que lo usemos-->
+            <div class="redes-sociales">
+                <!-- Los iconos usan propiedades de texto como "font-weight" -->
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-phone"></i>
+            </div>
+
+            <!-- Aca dejamos un pequeño box para que se comuniquen con nosotros, esto podria haber estado contenido en un form  -->
+            <div class="message">
+                <h4>Hace tu consulta y te responderemos por mail a la brevedad</h4>
+                <form>
+                    <textarea name="" id="" cols="30" rows="10" class="input" placeholder="Hace tu consulta"></textarea>
+                    <input type="text" placeholder="ingresa tu email para recibir respuesta" class="input">
+                    <button class="btn-beauty">Enviar</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- Por ultimo el footer que es el pie de nuestra pagina -->
+    <footer >
+        <div >
+            <p>beutymakeup@gmail.com</p>
+            <p>Av. corrintes 2700</p>
+            <p>©Derechos reservados 2023</p>
+        </div>
+        <p>Hecho con <span>❤</span> en mitre 3233</p>
+
+    </footer>
+    <script src="./main.js"></script>
+
+</body>
+</html>
