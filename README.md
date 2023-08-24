@@ -1,3 +1,5 @@
+##Soy Francisco Marin Cruz, programador full stak de General Roca, Rio Negro Argentina y tengo 24 años
+
 ## Bienvenidos al repositorio de BEAUTY MAKEUP
 
 Descripcion 😜:
